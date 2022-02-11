@@ -1,0 +1,12 @@
+<h1>{{recipeObj.title}}</h1>
+<img src="{{recipeObj.image}}" alt="food image" style="height: 30vh">
+<h3>Ingredients</h3>
+<ul *ngFor="let i of recipeObj.ingredients">
+  <li>{{i}}</li>
+</ul>
+<h3>Instructions</h3>
+<p>{{recipeObj.instructions}}</p>
+
+<button type="button" [routerLink]="['/']">Back</button>
+
+

@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="processForm()">
+  <div>
+    <h1>Title:</h1>
+    <input style="margin-bottom: 2em" type="text" formControlName="title">
+  </div>
+  <div formArrayName="ingredients">
+    <div style="margin-bottom: 1em">
+      <h3 style="display: inline; margin-right: 4em; margin-top: 4em">Ingredients</h3>
+      <button type="button" (click)="addFormControl()">+</button>
+    </div>
+    <div *ngFor="let arr of formArray.controls; let i = index">
+      <input type="text" [formControl]="$any(arr)">
+      <button type="button" (click)="removeFormControl(i)">x</button>
+    </div>
+  </div>
+  <div>
+    <h3>Instructions</h3>
+    <textarea style="height: 10vh" formControlName="instructions"></textarea>
+  </div>
+  <div>
+    <h3>Image:</h3>
+    <input type="text" formControlName="image">
+  </div>
+  <br>
+  <div>
+    <button type="button" [routerLink]="['/']">Back</button>
+    <button type="submit" [disabled]="form.invalid">Add</button>
+  </div>
+</form>

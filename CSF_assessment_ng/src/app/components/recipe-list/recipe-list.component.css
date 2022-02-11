@@ -1,0 +1,9 @@
+.list{
+  border: lightgrey 3px solid;
+  margin: 3px
+
+}
+
+.list:hover{
+  border: black 3px solid;
+}

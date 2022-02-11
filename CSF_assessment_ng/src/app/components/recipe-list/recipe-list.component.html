@@ -1,0 +1,6 @@
+<div>
+  <div class="list" *ngFor="let r of recipeList" [routerLink]="['/recipe/', r.recipeId]">
+    <p>{{r.title}}</p>
+  </div>
+  <button type="button" [routerLink]="['/add']">Add</button>
+</div>
