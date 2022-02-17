@@ -11,7 +11,7 @@ export class RecipeListComponent implements OnInit {
 
   constructor(private recipeSvc: RecipeService) { }
 
-  recipeList: Partial<Recipe>[] = []
+  recipeList!: Partial<Recipe>[]
 
   ngOnInit(): void {
     this.recipeSvc.getAllRecipes()

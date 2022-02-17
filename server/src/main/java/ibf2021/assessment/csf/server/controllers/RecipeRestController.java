@@ -18,6 +18,7 @@ import java.util.Optional;
 
 /* Write your request hander in this file */
 @RestController
+@CrossOrigin
 public class RecipeRestController {
 
     @Autowired
@@ -31,6 +32,7 @@ public class RecipeRestController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Recipe not found!");
         }else{
             Recipe recipe = recipeResult.get();
+            System.out.println(">>>>>>>>>>>>>>ingredients" + recipe.getIngredients());
             JsonObject recipeResultInJson = Json.createObjectBuilder()
                     .add("recipeId",recipe.getId())
                     .add("title",recipe.getTitle())

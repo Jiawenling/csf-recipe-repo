@@ -11,14 +11,14 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   getAllRecipes(): Promise<Partial<Recipe>[]>{
-    return lastValueFrom(this.http.get<Partial<Recipe>[]>('http://localhost:8080/api/recipes'))
+    return lastValueFrom(this.http.get<Partial<Recipe>[]>('/api/recipes'))
   }
 
   getRecipe(recipeId: string): Promise<Partial<Recipe>>{
-    return lastValueFrom(this.http.get<Partial<Recipe>>(`http://localhost:8080/api/recipe/${recipeId}`))
+    return lastValueFrom(this.http.get<Partial<Recipe>>(`/api/recipe/${recipeId}`))
   }
 
   saveRecipe(recipe:Recipe): Promise<Message>{
-    return lastValueFrom(this.http.post<Message>('http://localhost:8080/api/recipe', recipe))
+    return lastValueFrom(this.http.post<Message>('/api/recipe', recipe))
   }
 }
